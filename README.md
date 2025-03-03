@@ -1,5 +1,5 @@
-# CE{Code of Course}-{Short Name of Course}
-Solutions to Prof. {Name of Prof}'s CE{Code of Course}: {Full Name of Course} (Sharif University of Technology - {Semester} {Year}) Assignments
+# CE443-CN
+Solutions to Dr. Sadeghzadeh's CE443: Computer Networks (Sharif University of Technology - Spring 2025) Assignments
 
 ## Table of Contents
 
