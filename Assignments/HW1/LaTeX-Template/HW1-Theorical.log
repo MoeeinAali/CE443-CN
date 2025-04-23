@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  23 APR 2025 02:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  23 APR 2025 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1512,7 +1512,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
 
-[13] (./questions/8.tex)
+[13] (./questions/8.tex
+File: figs/1.png Graphic file (type bmp)
+<figs/1.png>
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(0)/m/n' will be
+(Font)              scaled to size 5.99998pt on input line 14.
+File: figs/2.png Graphic file (type bmp)
+<figs/2.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.1pt, for example:
@@ -1521,7 +1528,105 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
 
-[14] 
+[14]
+File: figs/3.png Graphic file (type bmp)
+<figs/3.png>
+File: figs/4.png Graphic file (type bmp)
+<figs/4.png>
+File: figs/5.png Graphic file (type bmp)
+<figs/5.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.1pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.1pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
+
+[15]
+File: figs/6.png Graphic file (type bmp)
+<figs/6.png>
+File: figs/7.png Graphic file (type bmp)
+<figs/7.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.1pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.1pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
+
+[16]
+File: figs/8.png Graphic file (type bmp)
+<figs/8.png>
+File: figs/9.png Graphic file (type bmp)
+<figs/9.png>
+File: figs/11.jpg Graphic file (type bmp)
+<figs/11.jpg>
+File: figs/12.jpg Graphic file (type bmp)
+<figs/12.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.1pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.1pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
+
+[17]
+File: figs/20.png Graphic file (type bmp)
+<figs/20.png>
+File: figs/21.png Graphic file (type bmp)
+<figs/21.png>
+File: figs/22.png Graphic file (type bmp)
+<figs/22.png>
+File: figs/23.png Graphic file (type bmp)
+<figs/23.png>
+File: figs/24.png Graphic file (type bmp)
+<figs/24.png>
+File: figs/25.png Graphic file (type bmp)
+<figs/25.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.1pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.1pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
+
+[18]
+File: figs/26.png Graphic file (type bmp)
+<figs/26.png>
+File: figs/27.png Graphic file (type bmp)
+<figs/27.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.1pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.1pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
+
+[19]
+File: figs/29.png Graphic file (type bmp)
+<figs/29.png>
+File: figs/30.png Graphic file (type bmp)
+<figs/30.png>
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.1pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.1pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.1pt}.
+
+[20] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./HW1-Theorical.aux)
 
@@ -1531,12 +1636,12 @@ Package rerunfilecheck Info: File `HW1-Theorical.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27168 strings out of 476683
- 511526 string characters out of 5807575
- 1864012 words of memory out of 5000000
- 46856 multiletter control sequences out of 15000+600000
- 514658 words of font info for 80 fonts, out of 8000000 for 9000
+ 27554 strings out of 476683
+ 517426 string characters out of 5807575
+ 1865012 words of memory out of 5000000
+ 47222 multiletter control sequences out of 15000+600000
+ 514666 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  90i,12n,101p,1354b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HW1-Theorical.pdf (14 pages).
+Output written on HW1-Theorical.pdf (20 pages).

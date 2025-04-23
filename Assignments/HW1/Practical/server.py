@@ -2,32 +2,25 @@ import socket
 import threading
 import json
 import os
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from ftplib import FTP
+import base64
 
-# Server configuration
 HOST = '127.0.0.1'
 PORT = 12345
 
-# FTP configuration
 FTP_SERVER = "127.0.0.1"
 FTP_USERNAME = "admin"
 FTP_PASSWORD = "admin"
-FTP_DIRECTORY = 'ftp_files'  # Folder where files will be uploaded
+FTP_DIRECTORY = 'ftp_files'
 
-# Classroom state
-clients = {}  # Format: {client_socket: {"id": id, "name": name}}
+clients = {}
 client_id_counter = 1
 
-# Ensure the FTP directory exists (for local backup use if needed)
 if not os.path.exists(FTP_DIRECTORY):
     os.makedirs(FTP_DIRECTORY)
 
 
 def broadcast(message, exclude_client=None):
-    """Send a message to all connected clients except optional exclude_client."""
     for client in list(clients.keys()):
         if client == exclude_client:
             continue
@@ -38,7 +31,6 @@ def broadcast(message, exclude_client=None):
 
 
 def list_files():
-    """List files in the FTP_DIRECTORY on the FTP server."""
     try:
         ftp = FTP(FTP_SERVER)
         ftp.login(FTP_USERNAME, FTP_PASSWORD)
@@ -51,18 +43,17 @@ def list_files():
 
 
 def download_file(filename):
-    """Download the file from the FTP server and return its content."""
     try:
         ftp = FTP(FTP_SERVER)
         ftp.login(FTP_USERNAME, FTP_PASSWORD)
-
-        # Retrieve file content into bytes
         file_content = bytearray()
+
         def handle_binary(more_data):
             file_content.extend(more_data)
+
         ftp.retrbinary(f"RETR {filename}", handle_binary)
         ftp.quit()
-        print(f"Downloaded {filename} successfully.")
+        print(f"Downloaded {filename} successfully from FTP.")
         return bytes(file_content)
     except Exception as e:
         print(f"Failed to download file from FTP server: {e}")
@@ -70,12 +61,9 @@ def download_file(filename):
 
 
 def server_command_interface():
-    """Allow server admin to send messages or issue commands to clients."""
     while True:
         command = input("\nEnter command (/chat, /listdir, /download): ")
-
         if command.startswith("/chat"):
-            # Extract message after the command
             msg = command[len("/chat "):].strip()
             payload = json.dumps({"type": "chat", "from": "Server", "message": msg}).encode('utf-8')
             broadcast(payload)
@@ -83,11 +71,9 @@ def server_command_interface():
 
         elif command.startswith("/listdir"):
             files = list_files()
-            files_str = "-".join(files)
-            print(f"Files in FTP: {files_str}")
+            print("Files on FTP:", ", ".join(files))
 
         elif command.startswith("/download"):
-            # Extract filename and attempt download
             parts = command.split(" ", 1)
             if len(parts) < 2:
                 print("Usage: /download <filename>")
@@ -95,36 +81,31 @@ def server_command_interface():
             filename = parts[1].strip()
             files = list_files()
             if filename in files:
-                file_content = download_file(filename)
-                if file_content:
-                    with open(filename, "wb") as file:
-                        file.write(file_content)  # Remove decode since we want to write bytes
+                file_bytes = download_file(filename)
+                if file_bytes:
+                    with open(filename, "wb") as f:
+                        f.write(file_bytes)
+                    print(f"Saved '{filename}' locally.")
                 else:
-                    print("Error downloading file.")
+                    print("Error downloading file from FTP.")
             else:
-                print(f"File {filename} does not exist on FTP server.")
+                print(f"File '{filename}' does not exist on FTP server.")
         else:
-            print("Invalid command. Use /chat <message> or /listdir or /download <filename>")
+            print("Invalid command. Use /chat, /listdir or /download <filename>")
 
 
 def handle_client(client, address):
-    """Handle communication with a single client."""
     global client_id_counter
     client_id = client_id_counter
     client_id_counter += 1
     clients[client] = {"id": client_id, "name": f"Student {client_id}"}
 
     print(f"New connection from {address} with ID {client_id}")
-
-    # Send welcome message to the client
     welcome_message = {
         "type": "welcome",
         "message": f"Welcome to the virtual classroom! Your ID is {client_id}."
     }
-    try:
-        client.send(json.dumps(welcome_message).encode('utf-8'))
-    except Exception as e:
-        print(f"Error sending welcome message to client {client_id}: {e}")
+    client.send(json.dumps(welcome_message).encode('utf-8'))
 
     broad_msg = {
         "type": "system",
@@ -147,20 +128,20 @@ def handle_client(client, address):
             print(f"\nReceived from client {client_id}: {message}")
 
             if message["type"] == "chat":
-                data_to_send = json.dumps({
+                payload = json.dumps({
                     "type": "chat",
                     "from": clients[client]["name"],
                     "message": message["message"]
                 }).encode('utf-8')
-                broadcast(data_to_send)
+                broadcast(payload)
 
             elif message["type"] == "email_status":
-                response = json.dumps({
+                response = {
                     "type": "email_status",
                     "status": "success",
                     "message": "Email Received"
-                }).encode('utf-8')
-                client.send(response)
+                }
+                client.send(json.dumps(response).encode('utf-8'))
 
             elif message["type"] == "upload":
                 filename = message["filename"]
@@ -183,23 +164,49 @@ def handle_client(client, address):
             elif message["type"] == "download":
                 filename = message["filename"]
                 files = list_files()
-                if filename in files:
+
+                if filename not in files:
                     response = {
-                        "type": "download_status",
-                        "filename": filename,
-                        "status": "OK",
-                        "message": f"Ready to download file {filename}."
+                        "type": "download_response",
+                        "status": "error",
+                        "message": f"File '{filename}' not found on FTP."
                     }
+                    client.send(json.dumps(response).encode('utf-8'))
+                    continue
+
+                decision = input(
+                    f"Client {client_id} requests download of '{filename}'.\n"
+                    "Type 'approve' to allow or anything else to reject: "
+                ).strip().lower()
+
+                if decision == "approve":
+                    file_bytes = download_file(filename)
+                    if file_bytes is not None:
+                        encoded = base64.b64encode(file_bytes).decode('utf-8')
+                        response = {
+                            "type": "download_response",
+                            "status": "success",
+                            "filename": filename,
+                            "content": encoded
+                        }
+                    else:
+                        response = {
+                            "type": "download_response",
+                            "status": "error",
+                            "message": f"Error reading '{filename}' from FTP."
+                        }
                 else:
                     response = {
-                        "type": "download_status",
-                        "filename": filename,
+                        "type": "download_response",
                         "status": "error",
-                        "message": f"File {filename} does not exist on FTP server."
+                        "message": "Download request was rejected by server."
                     }
+
                 client.send(json.dumps(response).encode('utf-8'))
+
             else:
                 print("Received unrecognized message type.")
+
     except Exception as e:
         print(f"Error in client {client_id} thread: {e}")
     finally:
@@ -214,13 +221,12 @@ def handle_client(client, address):
 
 
 def start_server():
-    """Start the server and accept client connections."""
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
-    server.listen(5)  
+    server.listen(5)
     print(f"Server started on {HOST}:{PORT}")
 
-    threading.Thread(target=server_command_interface, daemon=True).start()  
+    threading.Thread(target=server_command_interface, daemon=True).start()
 
     while True:
         try:
@@ -233,5 +239,4 @@ def start_server():
     server.close()
 
 
-if __name__ == "__main__":
-    start_server()
+start_server()
