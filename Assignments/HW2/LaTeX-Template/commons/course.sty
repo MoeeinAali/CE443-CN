@@ -12,7 +12,7 @@
 \usepackage{enumitem,xifthen,xparse}
 \usepackage[margin=1in]{geometry}
 \usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
-\usepackage[localise=on]{xepersian}
+\usepackage{xepersian}
 \usepackage[noend]{algpseudocode}
 \usepackage{physics}
 
@@ -95,10 +95,10 @@
 \def\english{\begin{latin}}
 
 \newcommand{\مهم}[1]{\textbf{#1}}
-\renewcommand{\برچسب}{\label}
+\newcommand{\برچسب}{\label}
 
 \newcommand{\REM}[1]{}
-\renewcommand{\حذف}{\REM}
+\newcommand{\حذف}{\REM}
 \newcommand{\لر}{\lr}
 \newcommand{\پاورقی}[1]{\footnote{\lr{#1}}}
 
@@ -221,7 +221,7 @@
 \newcommand{\mytitle}[1]
 {\bigskip{\bf\large{#1}}\nopagebreak\par\medskip}
 
-\renewcommand{\ورودی}{\mytitle{ورودی}}
+\newcommand{\ورودی}{\mytitle{ورودی}}
 \newcommand{\خروجی}{\mytitle{خروجی}}
 \newcommand{\محدودیت}{\mytitle{محدودیت‌ها}}
 \newcommand{\نمونه}{\mytitle{ورودی و خروجی نمونه}}
