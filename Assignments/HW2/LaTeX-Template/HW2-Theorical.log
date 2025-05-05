@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  4 MAY 2025 22:36
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  5 MAY 2025 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1149,7 +1149,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[3] (./questions/3.tex)
+[3] (./questions/3.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 7.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 8.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 13.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 14.
+
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(0)/m/n' will be
+(Font)              scaled to size 5.99998pt on input line 20.
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 37.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 38.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 39.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 40.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1158,7 +1185,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[4] (./questions/4.tex)
+[4]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1167,7 +1194,54 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[5] (./questions/5.tex
+[5]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 116.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 117.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 118.
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[6]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 206.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 207.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 208.
+
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[7] (./questions/4.tex)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[8] (./questions/5.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 11.
 
@@ -1210,7 +1284,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[6] (./questions/6.tex
+[9] (./questions/6.tex
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 9.
 
@@ -1255,7 +1329,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[7]
+[10]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 62.
 
@@ -1289,7 +1363,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[8] (./questions/7.tex)
+[11] (./questions/7.tex)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1298,7 +1372,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[9] 
+[12] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./HW2-Theorical.aux)
  ***********
@@ -1309,19 +1383,16 @@ L3 programming layer <2025-01-18>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `HW2-Theorical.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26564 strings out of 473832
- 526035 string characters out of 5729482
+ 26568 strings out of 473832
+ 526212 string characters out of 5729482
  1134451 words of memory out of 5000000
- 49111 multiletter control sequences out of 15000+600000
- 561232 words of font info for 87 fonts, out of 8000000 for 9000
+ 49114 multiletter control sequences out of 15000+600000
+ 561240 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,12n,107p,2370b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,12n,107p,2370b,387s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HW2-Theorical.pdf (9 pages).
+Output written on HW2-Theorical.pdf (12 pages).
