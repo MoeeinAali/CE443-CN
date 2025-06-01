@@ -1,0 +1,40 @@
+\subsectionaddtolist{آ}
+
+دو سابنت طرح شده را داخل جدول مسیریابی روتر خود قرار می‌دهیم به این صورت:
+
+\setLTR
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Destination} & \textbf{CIDR} & \textbf{Next Hop} \\
+		\hline
+		107.21.41.0 & /24 & \texttt{eth3}  \\
+		107.21.17.0 & /24 & \texttt{eth2}  \\
+		0.0.0.0 & /0 & \texttt{eth1}  \\
+		\hline
+	\end{tabular}
+\end{table}
+\setRTL
+
+\subsectionaddtolist{ب}
+
+نیاز نیست کار خیلی سختی انجام دهیم، صرفا آیپی سرور را به جدول مسیریابی اضافه می‌کنیم:
+
+\setLTR
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Destination} & \textbf{CIDR} & \textbf{Next Hop} \\
+		\hline
+		107.21.41.0 & /24 & \texttt{eth3}  \\
+		107.21.17.50 & /32 & \texttt{eth3}  \\
+		107.21.17.0 & /24 & \texttt{eth2}  \\
+		0.0.0.0 & /0 & \texttt{eth1}  \\
+		\hline
+	\end{tabular}
+\end{table}
+\setRTL
+
+جدول فوق به درستی کار می‌کند، چرا که مسیربابی با توجه به Longest-Prefix انجام می‌شود.

@@ -1,0 +1,36 @@
+\subsectionaddtolist{آ}
+
+\setLTR
+\lr{A: 223.1.1.0/24 \\ B: 223.1.3.0/24 \\ C: 223.1.2.0/24} \\
+\lr{ D: 223.1.7.0/24 \\ E: 223.1.8.0/24 \\ F: 223.1.9.0/24}
+\setRTL
+
+\subsectionaddtolist{ب}
+
+توجه کنید که D و E و F زیرمجموعه سابنت B و C هستند زیرا آیپی بلااستفاده دارند:
+
+\setLTR
+\lr{A' : 214.97.254.0/24 \\ B' : 214.97.255.0/25 \\ C' : 214.97.255.128/25 \\
+D' : 214.97.255.60/31 \\ E' : 214.97.255.62/31 \\ F' : 214.97.255.126/31
+}
+\setRTL
+
+\subsectionaddtolist{ج}
+
+\setLTR
+	\textbf{R\lr{2}(Net C):} \\
+	\lr{R1(NetA)} $\gets$ \lr{214.97.254.0/24} \\
+	\lr{R3(NetB)} $\gets$ \lr{214.97.255.0/25} \\
+	\lr{R3(NetB)} $\gets$ \lr{0.0.0.0/0} \\[10pt]
+	
+	\textbf{R\lr{1}(Net A):} \\
+	\lr{R3(NetB)} $\gets$ \lr{214.97.255.0/25} \\
+	\lr{R2(NetC)} $\gets$ \lr{214.97.255.128/25} \\
+	\lr{R2(NetC)} $\gets$ \lr{0.0.0.0/0} \\[10pt]
+	
+	\textbf{R\lr{3}(Net B):} \\
+	\lr{R1(NetA)} $\gets$ \lr{214.97.254.0/24} \\
+	\lr{R2(NetC)} $\gets$ \lr{214.97.255.128/25} \\
+	\lr{R2(NetC)} $\gets$ \lr{0.0.0.0/0}
+	
+\setRTL
