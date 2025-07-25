@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  23 JUL 2025 22:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.20)  25 JUL 2025 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1341,7 +1341,87 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[8] 
+[8] (./questions/5.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[9] (./questions/6.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 6.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 7.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 14.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 15.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[10]
+File: screenshot001.png Graphic file (type bmp)
+<screenshot001.png>
+File: screenshot003.png Graphic file (type bmp)
+<screenshot003.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[11]
+File: screenshot002.png Graphic file (type bmp)
+<screenshot002.png>
+File: screenshot004.png Graphic file (type bmp)
+<screenshot004.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[12]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 138.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 140.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 142.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 144.
+
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[13] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./HW4-Theorical.aux)
 
@@ -1351,12 +1431,12 @@ Package rerunfilecheck Info: File `HW4-Theorical.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25580 strings out of 476683
- 489453 string characters out of 5807575
- 1867012 words of memory out of 5000000
- 45309 multiletter control sequences out of 15000+600000
+ 25664 strings out of 476683
+ 491176 string characters out of 5807575
+ 1868012 words of memory out of 5000000
+ 45384 multiletter control sequences out of 15000+600000
  514690 words of font info for 84 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  90i,12n,101p,1333b,348s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HW4-Theorical.pdf (8 pages).
+Output written on HW4-Theorical.pdf (13 pages).
